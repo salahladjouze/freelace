@@ -1,0 +1,86 @@
+<div id="wrapper">
+
+<!-- Header Container
+================================================== -->
+<header id="header-container" class="fullwidth transparent">
+
+	<!-- Header -->
+	<div id="header">
+		<div class="container">
+			
+			<!-- Left Side Content -->
+			<div class="left-side">
+				
+				<!-- Logo -->
+				<div id="logo">
+					<a href="index.html"><img src="images/logo.png" alt=""></a>
+				</div>
+
+				<!-- Main Navigation -->
+				<nav id="navigation">
+					<ul id="responsive">
+
+						<li><a href="{{path('home')}}" class="current">Accueil</a>
+							
+						</li>
+
+						<li><a href="{{path('tasks')}}">Projets</a>
+					
+						</li>
+
+						<li><a href="#">Freelances</a>
+							
+						</li>
+
+						
+					
+
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+				<!-- Main Navigation / End -->
+				
+			</div>
+			<!-- Left Side Content / End -->
+
+
+			<!-- Right Side Content / End -->
+			<div class="right-side">
+
+				<div class="header-widget">
+					<a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><i class="icon-feather-log-in"></i> <span>S'identifier / S'inscrire</span></a>
+				</div>
+
+				<!-- Mobile Navigation Button -->
+				<span class="mmenu-trigger">
+					<button class="hamburger hamburger--collapse" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</span>
+
+			</div>
+			<!-- Right Side Content / End -->
+
+		</div>
+	</div>
+	<!-- Header / End -->
+
+</header>
+</div>
+
+      {% for label, messages in app.flashes %}
+           <div class="container">
+              <div class="alert alert-{{ label }}">
+                  {% for message in messages  %}
+                        <p>{{ message | raw }}</p>
+                  {% endfor %}
+              
+              </div>
+           
+           </div>
+
+
+
+      {% endfor %}

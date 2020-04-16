@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}toutes les Taches publier{% endblock %}
+{% block body %}
+<div class="margin-top-60"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-xl-3 col-lg-4">
+			<div class="sidebar-container">
+				
+			
+				<!-- Category -->
+				<div class="sidebar-widget">
+					<h3>Catégorie</h3>
+					<select class="selectpicker default" multiple data-selected-text-format="count" data-size="7" title="toutes catégories" >
+						<option>Développement Web & Logiciel</option>
+						<option>Science des données& Analitycs</option>
+						<option>Comptabilité & conseil</option>
+						<option>Rédaction & traductions</option>
+						<option>Ventes & Marketing</option>
+						<option>Conception & graphisme</option>
+						<option>Le marketing & numérique</option>
+						<option>Education & formation</option>
+					
+					</select>
+				</div>
+
+				
+
+				
+				<!-- Tags -->
+				<div class="sidebar-widget">
+					<h3>Skills</h3>
+
+					<div class="tags-container">
+						<div class="tag">
+							<input type="checkbox" id="tag1"/>
+							<label for="tag1">front-end dev</label>
+						</div>
+						<div class="tag">
+							<input type="checkbox" id="tag2"/>
+							<label for="tag2">angular</label>
+						</div>
+						<div class="tag">
+							<input type="checkbox" id="tag3"/>
+							<label for="tag3">react</label>
+						</div>
+						<div class="tag">
+							<input type="checkbox" id="tag4"/>
+							<label for="tag4">vue js</label>
+						</div>
+						<div class="tag">
+							<input type="checkbox" id="tag5"/>
+							<label for="tag5">web apps</label>
+						</div>
+						<div class="tag">
+							<input type="checkbox" id="tag6"/>
+							<label for="tag6">design</label>
+						</div>
+						<div class="tag">
+							<input type="checkbox" id="tag7"/>
+							<label for="tag7">wordpress</label>
+						</div>
+					</div>
+                
+        
+
+					<div class="clearfix"></div>
+    
+					<!-- More Skills -->
+					<div class="keywords-container margin-top-20">
+						<div class="keyword-input-container">
+							<input type="text" class="keyword-input" placeholder="add more skills"/>
+							<button class="keyword-input-button ripple-effect"><i class="icon-material-outline-add"></i></button>
+						</div>
+						<div class="keywords-list"><!-- keywords go here --></div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+<span class="button button-sliding-icon ripple-effect">Chercher <i class="icon-material-outline-arrow-right-alt"></i></span>
+			</div>
+		</div>
+		<div class="col-xl-9 col-lg-8 content-left-offset">
+
+			<h3 class="page-title">Resultas de la recherche</h3>
+
+			
+			
+			<!-- Tasks Container -->
+			<div class="tasks-list-container margin-top-35">
+				
+				
+              {% for tache in taches %}
+			
+
+				<!-- Task -->
+				<a  href="{{ path('task_show' , {'slug': tache.slug}) }}" class="task-listing">
+
+					<!-- Job Listing Details -->
+					<div class="task-listing-details">
+
+						<!-- Details -->
+						<div class="task-listing-description">
+							<h3 class="task-listing-title">{{tache.titre}}</h3>
+							<ul class="task-icons">
+								
+								<li><i class="icon-material-outline-access-time"></i> {{ tache.heureDatePublication|date("m/d/Y h:m") }}</li>
+							</ul>
+							<p class="task-listing-text">{{tache.categorie}}</p>
+							
+						</div>
+
+					</div>
+
+					<div class="task-listing-bid">
+						<div class="task-listing-bid-inner">
+							<div class="task-offers">
+								<strong>Buget</strong>
+								<span>{{tache.budget}} Da</span>
+							</div>
+						<span class="button button-sliding-icon ripple-effect" >	Consulter la tache<i class="icon-material-outline-arrow-right-alt"></i></span>
+						</div>
+					</div>
+				</a>
+{% endfor %}
+				<!-- Pagination -->
+				<div class="clearfix"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Pagination -->
+						<div class="pagination-container margin-top-30 margin-bottom-60">
+							<nav class="pagination">
+								<ul>
+									<li class="pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-left"></i></a></li>
+									<li><a href="#" class="ripple-effect">1</a></li>
+									<li><a href="#" class="current-page ripple-effect">2</a></li>
+									<li><a href="#" class="ripple-effect">3</a></li>
+									<li><a href="#" class="ripple-effect">4</a></li>
+									<li class="pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-right"></i></a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<!-- Pagination / End -->
+
+			</div>
+			<!-- Tasks Container / End -->
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}

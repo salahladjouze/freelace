@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'une tache{% endblock %}
+
+{% form_theme form _self %}
+{% block body %}
+<div class="margin-top-60"></div>
+ <div class="container">
+ <h1>Créer une nouvelle Tache</h1>
+ {{form_start(form)}}
+ {{form_widget(form)}}
+<button type="submit" class="button ripple-effect" onclick="window.location" >Confirmer</button>
+ {{form_end(form)}}
+</div>
+</div>
+<div class="margin-top-60"></div>
+{% endblock %}

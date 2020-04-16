@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Selekeni - {% block title %}Welcome!{% endblock %}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="/css/style.css">
+         <link rel="stylesheet" href="/css/colors/blue.css">
+         
+
+
+
+
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    {% include 'partials/header.html.twig' %}
+        {% block body %}{% endblock %}
+        {% include 'partials/footer.html.twig' %}
+
+
+ <script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-migrate-3.0.0.min.js"></script>
+<script src="/js/mmenu.min.js"></script>
+<script src="/js/tippy.all.min.js"></script>
+<script src="/js/simplebar.min.js"></script>
+<script src="/js/bootstrap-slider.min.js"></script>
+<script src="/js/bootstrap-select.min.js"></script>
+<script src="/js/snackbar.js"></script>
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/counterup.min.js"></script>
+<script src="/js/magnific-popup.min.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/custom.js"></script>
+
+<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
